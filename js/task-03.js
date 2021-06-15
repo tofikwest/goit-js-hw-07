@@ -15,9 +15,12 @@ const images = [
 const gallery = document.getElementById('gallery')
 
 const createGallery = images.map(image => {
-  gallery.setAttribute('style', 'display: flex')
-  gallery.insertAdjacentHTML("afterbegin", `<li style="margin-right: 10px"><img src="${image.url}" width='300px' height='auto' alt="${image.alt}"</li>`)
+  return `<li style="margin-right: 10px"><img src="${image.url}" width='300px' height='auto' alt="${image.alt}"</li>`
 })
+gallery.insertAdjacentHTML("afterbegin", createGallery.join(''))
+gallery.setAttribute('style', 'display: flex')
+
+
 
 
 // for (let i = 0; i < images.length; i++) {

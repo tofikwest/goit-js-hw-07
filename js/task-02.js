@@ -9,18 +9,12 @@ const ingredients = [
 
 const getIdIngred = document.getElementById('ingredients')
 
-
-// for (let i = 0; i < ingredients.length; i++) {
-//   const addIngred = document.createElement('li')
-//   addIngred.textContent = ingredients[i]
-//   getIdIngred.appendChild(addIngred)
-// }
-// console.log(getIdIngred)
-
 const ingreMap = ingredients.map(ingridient => {
   const addIngred = document.createElement('li')
   addIngred.textContent = ingridient
-  getIdIngred.appendChild(addIngred)
+
   return addIngred;
 })
+getIdIngred.append(...ingreMap)
+
 console.log(getIdIngred);
